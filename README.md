@@ -1,1 +1,0 @@
-# samrat.github.io
