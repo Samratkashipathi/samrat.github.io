@@ -5,8 +5,8 @@ Landed into this amazing blog [post](https://michaelnielsen.org/ddi/how-to-crawl
 In this post author used Bloom Filter to capture if the web page is already crawled.
 
  What is a bloom filter?
-- Given an input bloom filter returns if the input is present or not. Or rather a bloom filter may return if the key is present or not. This is because the bloom filter can return a false positive. More on this later in the post
-* In this particular use case where the author wanted to store all the web pages already crawled, he is using bloom filter to figure it out.
+- Given an input bloom filter return true if the key might be present present else false. Bloom filter can return a false positive.
+* In this particular use case where the author wanted to store all the web pages already crawled, he is using bloom filter to figure it check if crawler already visited the site.
 - Advantage: You don't need a lot of space to store data, you can have an in-memory datastore. The size of the datastore is known prior in the case of bloom filter
 
 ### How does bloom filter works
