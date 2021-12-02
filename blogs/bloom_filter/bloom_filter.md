@@ -10,9 +10,9 @@ In this post author used Bloom Filter to capture if the web page is already craw
 - Advantage: You don't need a lot of space to store data, you can have an in-memory datastore. The size of the datastore is known prior in the case of bloom filter
 
 ### How does bloom filter works
+<br>
 
-
-[Working](../bloom_filter/Working.png)
+![Working](../bloom_filter/Working.png)
 
 Given a word, it goes through the sequence of hash functions, set the bloom filter bit based on the output of the hash
 
@@ -24,10 +24,11 @@ Example:
 We set 2,4 and 7th bits in the bloom filter
 
 
-##### Querying
+#### Querying
 
+<br>
 
-[Working1](../bloom_filter/Working1.png)
+![Working1](../bloom_filter/Working1.png)
 
 In case we need to check if the word exists we can do the same set of functions again, if we get all the bits as 1 then the word may exist else it does not exist
 
