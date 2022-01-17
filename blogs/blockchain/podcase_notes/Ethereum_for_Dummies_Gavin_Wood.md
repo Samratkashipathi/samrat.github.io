@@ -38,7 +38,7 @@ Servers are Walled Garden (?) -> Monopoly
 
 Does not give false security, no data is places in the third part server (?)
 
-Authenticity -> No third party server auth you, you have provate key to get auth
+Authenticity -> No third party server auth you, you have private key to get auth
 
 Because of decentralised:
 * No Single point of failure, control, bottelneck in ***principle***
