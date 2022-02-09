@@ -2,6 +2,8 @@
 
 ## Blog post
 
+[[WIP] Understanding Raft Consensus](blogs/raft/Raft.md)
+
 [[06-01-2022] Go Channels and Go Routines](blogs/go/channels.md)
 
 [[02-12-2021] Understanding Bloom Filter](blogs/bloom_filter/bloom_filter.md)
