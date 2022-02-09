@@ -19,7 +19,7 @@
 
 ## Raft
 
-There are many known concensus algorith that aims in solving this problem, like Paxos etc. Raft aims in simplifying the alogrithm so that it can easy to understand and implement
+There are many known concensus algorithm that aims in solving this problem, like Paxos etc. Raft aims in simplifying the alogrithm so that it can easy to understand and implement
 
 
 Consensus algorithm aims in manaing the `state` (log repication across all the nodes)
