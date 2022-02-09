@@ -7,7 +7,7 @@ Types of channels:
 
 ### UnBounded
 
-Example 1: https://go.dev/play/p/2VrwUi-XDMx
+Example 1: [Go Playground](https://go.dev/play/p/2VrwUi-XDMx)
 
 ```go
 ch := make(chan int)
@@ -15,7 +15,7 @@ ch := make(chan int)
 
 ### Bounded
 
-Example 2: https://go.dev/play/p/m4gky1WVmXd
+Example 2: [Go Playground](https://go.dev/play/p/m4gky1WVmXd)
 
 ```go
 ch := make(chan int, 3)
