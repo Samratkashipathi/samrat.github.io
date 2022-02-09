@@ -22,7 +22,7 @@
 There are many known concensus algorith that aims in solving this problem, like Paxos etc. Raft aims in simplifying the alogrithm so that it can easy to understand and implement
 
 
-Consensus algorith aims in manaing the `state` (log repication across all the nodes)
+Consensus algorithm aims in manaing the `state` (log repication across all the nodes)
 
 Keeping the replicated log consistent is the job of the consensus algorithm. It should be able to operate if majority of the nodes are running
 
