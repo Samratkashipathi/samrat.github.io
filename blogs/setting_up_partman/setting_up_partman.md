@@ -98,7 +98,7 @@ We can do that using multiple way
 - We can write a corn that supports this use case
 - Use scheduler pg_agent where you will execute a procedure every day at say
 
-And many other ways which are wither difficult to setup or maintain
+And many other ways which are either difficult to setup or maintain
 
 This is where we can use partman to setup. Advantages are as below
 
