@@ -2,5 +2,5 @@ theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 title: ""
-# description: Welcome to my blog
+description: ""
 author: Samrat K S
