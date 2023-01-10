@@ -4,9 +4,11 @@
 
 ### 2023
 
-[[WIP] Understanding Raft Consensus](blogs/raft/Raft.md)
+
 
 ### 2022
+
+[[WIP] Understanding Raft Consensus](blogs/raft/Raft.md)
 
 [[06-01-2022] Go Channels and Go Routines](blogs/go/channels.md)
 
