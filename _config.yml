@@ -1,6 +1,6 @@
 theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
-title: Samrat Blog
-description: Welcome to my blog
+# title: Samrat Blog
+# description: Welcome to my blog
 author: Samrat K S
