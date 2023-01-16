@@ -125,3 +125,6 @@ versions:
   postgres: 9.3
   rabbitmq: 3.18.9
 ```
+
+### Related Reads
+- https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell?ref=architecture-notes
