@@ -1,4 +1,4 @@
-# [26-05-2021] - Cases when YAML will not work if not properly declared
+# Cases when YAML will not work if not properly declared
 
 ## Wrong Interpretation
 
