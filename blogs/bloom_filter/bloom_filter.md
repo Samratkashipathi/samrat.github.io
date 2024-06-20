@@ -1,4 +1,4 @@
-# [02-12-2021] Understanding Bloom Filter
+# Understanding Bloom Filter
 
 Landed into this amazing blog [post](https://michaelnielsen.org/ddi/how-to-crawl-a-quarter-billion-webpages-in-40-hours/) where the author explains about crawling a quarter billion webpage in 40 hours
 
