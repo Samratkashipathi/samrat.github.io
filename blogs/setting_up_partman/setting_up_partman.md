@@ -1,4 +1,4 @@
-# [26-05-2021] Setting up Partman - Postgres
+# Setting up Partman - Postgres
 
 # What is partitioning?
 
