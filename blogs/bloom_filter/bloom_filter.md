@@ -1,10 +1,10 @@
 # Understanding Bloom Filter
 
-Landed into this amazing blog [post](https://michaelnielsen.org/ddi/how-to-crawl-a-quarter-billion-webpages-in-40-hours/) where the author explains about crawling a quarter billion webpage in 40 hours
+I recently came across an fascinating blog [post](https://michaelnielsen.org/ddi/how-to-crawl-a-quarter-billion-webpages-in-40-hours/) where the author explains how they crawled a quarter billion webpages in just 40 hours. One of the key techniques they used was a Bloom filter to efficiently track which webpages had already been crawled.
 
 In this post author used Bloom Filter to capture if the web page is already crawled.
 
- What is a bloom filter?
+What is a bloom filter?
 
 - Given an input bloom filter return true if the key might be present present else false. Bloom filter can return a false positive.
 - In this particular use case where the author wanted to store all the web pages already crawled, he is using bloom filter to figure it check if crawler already visited the site.
@@ -16,7 +16,11 @@ In this post author used Bloom Filter to capture if the web page is already craw
 
 ![Working](../bloom_filter/Working.png)
 
-Given a word, it goes through the sequence of hash functions, set the bloom filter bit based on the output of the hash
+When inserting an element (e.g., a word or URL) into a Bloom filter:
+
+The element is passed through multiple hash functions.
+Each hash function outputs a position in the filter's bit array.
+The bits at these positions are set to 1.
 
 Example:
 
@@ -24,7 +28,7 @@ Example:
 - h2("word") % 10 = 4
 - h3("word") % 10 = 7
 
-We set 2,4 and 7th bits in the bloom filter
+We would set the 2nd, 4th, and 7th bits in the Bloom filter to 1.
 
 ## Querying
 
@@ -32,8 +36,15 @@ We set 2,4 and 7th bits in the bloom filter
 
 ![Working1](../bloom_filter/Working1.png)
 
-In case we need to check if the word exists we can do the same set of functions again, if we get all the bits as 1 then the word may exist else it does not exist
+To check if an element exists in the set:
 
-There are chances of false positives, bloom filter can return a word that exists even though the word might not be present. But it never returns true negatives where it returns word that does not exist but it exist. This is because bloom filter properties like fixed size and word can never be deleted once recorded in the bloom filter.
+Pass the element through the same hash functions.
+Check if all the corresponding bits in the filter are set to 1.
+If all bits are 1, the element may exist in the set. If any bit is 0, the element definitely does not exist.
 
-Generally, there will be a second layer to check if the word exists if the bloom filter says exists.
+## Limitations
+
+- Possibility of false positives: The filter may indicate an element is in the set when it actually isn't.
+  - Generally, there will be a second layer to check if the word exists if the bloom filter says exists.
+- Elements can't be removed from the standard Bloom filter.
+- The size of the filter must be set in advance and can't be resized without recreating the entire filter.
