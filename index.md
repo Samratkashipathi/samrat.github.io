@@ -2,19 +2,21 @@
 
 ## Blog post
 
+- [[WIP] Understanding Raft Consensus](blogs/raft/Raft.md)
 
+- [Understanding Bloom Filter](blogs/bloom_filter/bloom_filter.md)
 
-[[WIP] Understanding Raft Consensus](blogs/raft/Raft.md)
+- [Cases when YAML will not work if not properly declared](blogs/Cases_when_YAML_will_not_work_if_not_properly_declared.md)
 
-[Go Channels and Go Routines](blogs/go/channels.md)
+## Golang
 
-[Understanding Bloom Filter](blogs/bloom_filter/bloom_filter.md)
+- [Go Channels and Go Routines](blogs/go/channels.md)
 
-[Setting up Partman - Postgres](blogs/setting_up_partman/setting_up_partman.md)
+## Database
 
-[Cases when YAML will not work if not properly declared](blogs/Cases_when_YAML_will_not_work_if_not_properly_declared.md)
+- [Setting up Partman - Postgres](blogs/setting_up_partman/setting_up_partman.md)
 
-[Postgres useful commands](blogs/postgres_useful_commands.md)
+- [Postgres useful commands](blogs/postgres_useful_commands.md)
 
 <br>
 <hr>
