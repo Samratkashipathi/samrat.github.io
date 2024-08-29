@@ -48,3 +48,17 @@ If all bits are 1, the element may exist in the set. If any bit is 0, the elemen
   - Generally, there will be a second layer to check if the word exists if the bloom filter says exists.
 - Elements can't be removed from the standard Bloom filter.
 - The size of the filter must be set in advance and can't be resized without recreating the entire filter.
+
+## Time complexity
+
+| Operation    | Complexity |
+| --------     | -------    |
+| Insertion    |  O(k)      |
+| Find         |  O(k)      |
+
+k = *Number of Hash function*
+
+## Related reads
+
+- <https://hur.st/bloomfilter/>
+- <https://systemdesign.one/bloom-filters-explained>
