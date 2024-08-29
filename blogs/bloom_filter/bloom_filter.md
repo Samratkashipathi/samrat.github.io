@@ -5,11 +5,13 @@ Landed into this amazing blog [post](https://michaelnielsen.org/ddi/how-to-crawl
 In this post author used Bloom Filter to capture if the web page is already crawled.
 
  What is a bloom filter?
+
 - Given an input bloom filter return true if the key might be present present else false. Bloom filter can return a false positive.
-* In this particular use case where the author wanted to store all the web pages already crawled, he is using bloom filter to figure it check if crawler already visited the site.
+- In this particular use case where the author wanted to store all the web pages already crawled, he is using bloom filter to figure it check if crawler already visited the site.
 - Advantage: You don't need a lot of space to store data, you can have an in-memory datastore. The size of the datastore is known prior in the case of bloom filter
 
-### How does bloom filter works
+## How does bloom filter works
+
 <br>
 
 ![Working](../bloom_filter/Working.png)
@@ -17,14 +19,14 @@ In this post author used Bloom Filter to capture if the web page is already craw
 Given a word, it goes through the sequence of hash functions, set the bloom filter bit based on the output of the hash
 
 Example:
-* h1("word") % 10 = 2
-* h2("word") % 10 = 4
-* h3("word") % 10 = 7
+
+- h1("word") % 10 = 2
+- h2("word") % 10 = 4
+- h3("word") % 10 = 7
 
 We set 2,4 and 7th bits in the bloom filter
 
-
-#### Querying
+## Querying
 
 <br>
 

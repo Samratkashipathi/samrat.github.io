@@ -10,27 +10,25 @@
 
 ![Working](../raft/s2.png)
 
-* Before replication can continue, lets say we got request to update state from multiple clients, one the client updates state to `a` and another client updates state to `b` 
+* Before replication can continue, lets say we got request to update state from multiple clients, one the client updates state to `a` and another client updates state to `b`
 
 * Since both the data store are unabled to replicate, they will diverge and no longer be consistenct. This is known as split brain
 
 ![Working](../raft/s3.png)
 
-
 ## Raft
 
 There are many known concensus algorithm that aims in solving this problem, like Paxos etc. Raft aims in simplifying the alogrithm so that it can easy to understand and implement
-
 
 Consensus algorithm aims in manaing the `state` (log repication across all the nodes)
 
 Keeping the replicated log consistent is the job of the consensus algorithm. It should be able to operate if majority of the nodes are running
 
 Three main features:
+
 * Leader election: When existing leader fails, new leader must be choosen
 * Log replication: Leader is the entry point for log entris from client, it responsible for replicating log across all the other nodes
 * Safety: At a given index all the server should have same entry in the log
-
 
 <br>
 <br>

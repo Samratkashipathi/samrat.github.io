@@ -3,36 +3,35 @@
 ## Wrong Interpretation
 
 - There are some cases where yaml will not work and can be hard to debug the error
-    - Example 1:
-        - Suppose you have to store user name in yaml and read it later. One of the user is named "Christopher Null"
-        
-        ```
+  - Example 1:
+    - Suppose you have to store user name in yaml and read it later. One of the user is named "Christopher Null"
+
+        ```yaml
         name:
           first_name: Christopher
           second_name: Null
         ```
-        
-    - Example 2
-        - Suppose you are storing short form of some countries and one of the country is Norway
-        
-        ```
+
+  - Example 2
+    - Suppose you are storing short form of some countries and one of the country is Norway
+
+        ```yaml
         countries:
           - IN
           - SA
           - NO
         ```
-        
 
 Expected behaviour when yaml is read. Since YAML considers everything as a string.
 
 ```python
 { 
-	'countries': ['IN', 'SA', 'NO'], 
-	'name': 
-		{
-			'first_name': 'Christopher', 
-			'second_name': 'Null'
-		}
+ 'countries': ['IN', 'SA', 'NO'], 
+ 'name': 
+  {
+   'first_name': 'Christopher', 
+   'second_name': 'Null'
+  }
 }
 ```
 
@@ -40,53 +39,52 @@ Actual result:
 
 ```python
 { 
-	'countries': ['IN', 'SA', False], 
-	'name': 
-		{
-			'first_name': 'Christopher', 
-			'second_name': None
-		}
+ 'countries': ['IN', 'SA', False], 
+ 'name': 
+  {
+   'first_name': 'Christopher', 
+   'second_name': None
+  }
 }
 ```
 
 > NO is converted to False which was supposed to be short for Norway
 
 Null is converted to None which was supposed to be second name
-> 
+>
 
 ## Data Type Mismatch
 
 - Another example:
-    - Suppose you want to store version information of the packages in yaml
-    
-    ```
+  - Suppose you want to store version information of the packages in yaml
+
+    ```yaml
     versions:
-    	postgres: 9.3
+     postgres: 9.3
       rabbitmq: 3.18.9
     ```
-    
+
     Expectation
-    
+
     ```python
     {
     'versions':
-    	{
-    		'postgres' : '9.3'
-    		'rabbitmq' : '3.18.9'
-    	}
+     {
+      'postgres' : '9.3'
+      'rabbitmq' : '3.18.9'
+     }
     }
     ```
-    
 
 Actual
 
 ```python
 {
 'versions':
-	{
-		'postgres' : 9.3
-		'rabbitmq' : '3.18.9'
-	}
+ {
+  'postgres' : 9.3
+  'rabbitmq' : '3.18.9'
+ }
 }
 ```
 
@@ -127,4 +125,5 @@ versions:
 ```
 
 ### Related Reads
-- https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell?ref=architecture-notes
+
+- <https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell?ref=architecture-notes>

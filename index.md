@@ -9,7 +9,7 @@
 
 # Golang
 
-- [Go Channels and Go Routines](blogs/go/channels.md)
+- [Understanding difference b/w buffered and un-buffered go channels](blogs/go/channels.md)
 
 # Database
 

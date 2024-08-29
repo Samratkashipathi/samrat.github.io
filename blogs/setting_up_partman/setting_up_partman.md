@@ -1,6 +1,6 @@
 # Setting up Partman - Postgres
 
-# What is partitioning?
+## What is partitioning?
 
 Splitting up the large table into a logical group of subtables
 
@@ -9,7 +9,7 @@ There are multiple ways data can be partitioned.
 - Time-based
 - Serial based
 
-### Why is it required?
+## Why is it required?
 
 - Query performance can be improved
 - Data deleting can be made easier
@@ -106,57 +106,57 @@ This is where we can use partman to setup. Advantages are as below
 - Easy to run scheduled clean up
 - Configurable parameters like number of Backups, numbers of tables to create for future use, interval to run the BGW and much more
 
-### Installation
+## Installation
 
 - `git clone git@github.com:pgpartman/pg_partman.git`
 - `make install`
 
-### Setup
+## Setup
 
 - Create partman schema
-    
+
     ```sql
     CREATE SCHEMA IF NOT EXISTS partman;
     ```
-    
+
 - Create table
-    
+
     ```sql
     create table ticket (id serial, status text, created_at date) partition by range 
     (created_at);
     ```
-    
+
 - Setting partman config for the table
-    
+
     ```sql
     SELECT partman.create_parent('public.ticket', 'created_at', 'native', 'daily');
     ```
-    
+
     Parameters:
-    
-    - Parent table name
-    - Partition key
-    - Type of partman
-    - Parition interval
-    
+
+  - Parent table name
+  - Partition key
+  - Type of partman
+  - Parition interval
+
     We should be seeing following tables now:
-    
+
     ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled.png](../setting_up_partman/Untitled.png)
-    
+
     ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%201.png](../setting_up_partman/Untitled%201.png)
-    
+
     We can also see partman config
-    
+
     ```sql
     select * from partman.part_config;
     ```
-    
+
     ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%202.png](../setting_up_partman/Untitled%202.png)
-    
+
     Most of the values are default values. Few of the fields which might be handy are
-    
+
     [Partman configs](https://www.notion.so/4eff86b4a60a41de902dc2eff6204762)
-    
+
 
 - Setting up retention
 
@@ -165,20 +165,20 @@ update partman.part_config set retention = '1 days' and retention_keep_table= fa
 ```
 
 - Setting up background worker
-    
+
     Update the following config in postgresql.conf
-    
+
     ```yaml
     shared_preload_libraries = 'pg_partman_bgw'  # Change requires restart
     pg_partman_bgw.interval = 30                 # How often to run background worker (in seconds)
     pg_partman_bgw.dbname = ''                   # Name of the database on which partman background worker should run
     ```
-    
+
 
 ### Testing
 
 - We can insert some sample data
-    
+
     ```sql
     INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-05-22');
     INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-05-22');
@@ -190,16 +190,16 @@ update partman.part_config set retention = '1 days' and retention_keep_table= fa
     INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-05-25');
     INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-05-26');
     ```
-    
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%203.png](../setting_up_partman/Untitled%203.png)
-    
-- Once background worker runs we should be able see `ticket_p2021_05_22` till `ticket_p2021_05_25` to be deleted as we have configured retention to be 1 day
-    
-    
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%204.png](../setting_up_partman/Untitled%204.png)
-    
 
-# Closing Notes
+    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%203.png](../setting_up_partman/Untitled%203.png)
+
+- Once background worker runs we should be able see `ticket_p2021_05_22` till `ticket_p2021_05_25` to be deleted as we have configured retention to be 1 day
+
+
+    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%204.png](../setting_up_partman/Untitled%204.png)
+
+
+## Closing Notes
 
 - Partam is easy to configure and maintain
 - It can be used to extend other functionality like archiving old data in backup database

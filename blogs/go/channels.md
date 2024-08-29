@@ -1,11 +1,11 @@
-## Go Channels and Go Routines
+# Go Channels and Go Routines
 
 Types of channels:
 1. UnBuffered
 2. Buffered
 
 
-### UnBuffered
+## UnBuffered
 
 Example 1: [Go Playground](https://go.dev/play/p/2VrwUi-XDMx)
 
@@ -13,7 +13,7 @@ Example 1: [Go Playground](https://go.dev/play/p/2VrwUi-XDMx)
 ch := make(chan int)
 ```
 
-### Buffered
+## Buffered
 
 Example 2: [Go Playground](https://go.dev/play/p/m4gky1WVmXd)
 
@@ -21,8 +21,7 @@ Example 2: [Go Playground](https://go.dev/play/p/m4gky1WVmXd)
 ch := make(chan int, 3)
 ```
 
-
-#### Difference b/w Buffered and UnBuffered
+## Difference b/w Buffered and UnBuffered
 
 In the case of an UnBuffered channel while signalling the data to channel it is blocked until there is a receiver which makes is `Guaranteed delivery of message`. But in the case of Buffered channel receiver need not be present at the time of signalling to the channel. There is no guarantee that message will be delivered
 
