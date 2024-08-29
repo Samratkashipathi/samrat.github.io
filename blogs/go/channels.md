@@ -1,6 +1,7 @@
-# Go Channels and Go Routines
+# Understanding difference b/w buffered and un-buffered go channels
 
 Types of channels:
+
 1. UnBuffered
 2. Buffered
 
