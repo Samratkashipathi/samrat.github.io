@@ -1,6 +1,5 @@
-# Welcome
 
-## Blog post
+# General
 
 - [[WIP] Understanding Raft Consensus](blogs/raft/Raft.md)
 
@@ -8,11 +7,11 @@
 
 - [Cases when YAML will not work if not properly declared](blogs/Cases_when_YAML_will_not_work_if_not_properly_declared.md)
 
-## Golang
+# Golang
 
 - [Go Channels and Go Routines](blogs/go/channels.md)
 
-## Database
+# Database
 
 - [Setting up Partman - Postgres](blogs/setting_up_partman/setting_up_partman.md)
 
@@ -22,7 +21,7 @@
 <hr>
 <br>
 
-### Old Blog link
+# Old Blog link
 
 [Wordpress](https://samratkashipathi.wordpress.com/)
 
@@ -30,6 +29,6 @@
 <hr>
 <br>
 
-## Notes dump
+# Notes dump
 
 [Notes](blogs/notes.md)
