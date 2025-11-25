@@ -7,7 +7,7 @@ tags: [blockchain, distributed-systems]
 
 ## What is Byzantine generals problem
 
-![Byzantine generals problem](/assets/images/blockchain/byzantine_generals_problem.png)
+![Byzantine generals problem]({{ site.baseurl }}/assets/images/blockchain/byzantine_generals_problem.png)
 
 Byzantine generals problem is a game theory that states: suppose you are attacking a fort from different sides, how can all the generals on all sides of the fort come to consensus without a trusted central party that everyone will attack the fort at the same time. Only if the attack happens at the same time they win, else no
 

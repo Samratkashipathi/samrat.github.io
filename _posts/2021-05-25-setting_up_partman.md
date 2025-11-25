@@ -146,9 +146,9 @@ This is where we can use partman to setup. Advantages are as below
 
     We should be seeing following tables now:
 
-    ![Partman Tables](/assets/images/setting_up_partman/Untitled.png)
+    ![Partman Tables]({{ site.baseurl }}/assets/images/setting_up_partman/Untitled.png)
 
-    ![Partman Config](/assets/images/setting_up_partman/Untitled%201.png)
+    ![Partman Config]({{ site.baseurl }}/assets/images/setting_up_partman/Untitled%201.png)
 
     We can also see partman config
 
@@ -156,7 +156,7 @@ This is where we can use partman to setup. Advantages are as below
     select * from partman.part_config;
     ```
 
-    ![Part Config Table](/assets/images/setting_up_partman/Untitled%202.png)
+    ![Part Config Table]({{ site.baseurl }}/assets/images/setting_up_partman/Untitled%202.png)
 
     Most of the values are default values. Few of the fields which might be handy are documented in the Partman configuration.
 
@@ -194,12 +194,12 @@ update partman.part_config set retention = '1 days' and retention_keep_table= fa
     INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-05-26');
     ```
 
-    ![Sample Data](/assets/images/setting_up_partman/Untitled%203.png)
+    ![Sample Data]({{ site.baseurl }}/assets/images/setting_up_partman/Untitled%203.png)
 
 - Once background worker runs we should be able see `ticket_p2021_05_22` till `ticket_p2021_05_25` to be deleted as we have configured retention to be 1 day
 
 
-    ![Partitions After Cleanup](/assets/images/setting_up_partman/Untitled%204.png)
+    ![Partitions After Cleanup]({{ site.baseurl }}/assets/images/setting_up_partman/Untitled%204.png)
 
 
 ## Closing Notes

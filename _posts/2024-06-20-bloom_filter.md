@@ -17,7 +17,7 @@ What is a bloom filter?
 
 ## How does bloom filter work
 
-![Working](/assets/images/bloom_filter/Working.png)
+![Working]({{ site.baseurl }}/assets/images/bloom_filter/Working.png)
 
 When inserting an element (e.g., a word or URL) into a Bloom filter:
 
@@ -35,7 +35,7 @@ We would set the 2nd, 4th, and 7th bits in the Bloom filter to 1.
 
 ## Querying
 
-![Working1](/assets/images/bloom_filter/Working1.png)
+![Working1]({{ site.baseurl }}/assets/images/bloom_filter/Working1.png)
 
 To check if an element exists in the set:
 

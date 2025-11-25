@@ -23,7 +23,7 @@ Notes from [Ethereum for Dummies - Dr. Gavin Wood](https://www.youtube.com/watch
   * Replay everything in past and get the same result  
   
 
-![Ethereum_for_Dummies_Gavin_Wood](/assets/images/blockchain/Ethereum_for_Dummies_Gavin_Wood.png)
+![Ethereum_for_Dummies_Gavin_Wood]({{ site.baseurl }}/assets/images/blockchain/Ethereum_for_Dummies_Gavin_Wood.png)
 
 *Image source: [Ethereum for Dummies - Dr. Gavin Wood](https://www.youtube.com/watch?v=U_LK0t_qaPo&ab_channel=Ethereum)*
 
