@@ -1,10 +1,7 @@
 entries:
-  - title: Home
-    url: /
-  
-  - title: all posts
+  - title: All posts
     post_list:
-      limit: 10
+      limit: 20
       show_more: true
       show_more_text: See archive...
       show_more_url: /archive.html
