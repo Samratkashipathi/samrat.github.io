@@ -1,14 +1,9 @@
 @import "{{ site.theme }}";
 
 body {
-    font-family: "Times New Roman", Times, serif;
-    /* Matches Physical Intelligence */
+  font-family: "Times New Roman", Times, serif; /* Matches Physical Intelligence */
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: Helvetica, Arial, sans-serif;
-    /* Keep headers clean */
+h1, h2, h3, h4 {
+  font-family: Helvetica, Arial, sans-serif; /* Keep headers clean */
 }
