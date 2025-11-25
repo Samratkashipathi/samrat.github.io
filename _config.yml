@@ -1,7 +1,7 @@
 title: Samrat K S
 description: General | Golang | Database
 url: "https://samratkashipathi.github.io"
-baseurl: "samrat.github.io"
+baseurl: "/samrat.github.io"
 
 remote_theme: riggraz/no-style-please
 
