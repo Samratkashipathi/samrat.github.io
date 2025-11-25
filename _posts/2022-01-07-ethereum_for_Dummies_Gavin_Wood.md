@@ -5,8 +5,6 @@ date: 2022-01-07
 tags: [ethereum, blockchain]
 ---
 
-# Ethereum for Dummies - Dr. Gavin Wood
-
 Notes from [Ethereum for Dummies - Dr. Gavin Wood](https://www.youtube.com/watch?v=U_LK0t_qaPo&ab_channel=Ethereum)  
 
 

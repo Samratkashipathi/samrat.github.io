@@ -5,8 +5,6 @@ date: 2024-06-20
 tags: [algorithms, data-structures]
 ---
 
-# Understanding Bloom Filter
-
 I recently came across an fascinating blog [post](https://michaelnielsen.org/ddi/how-to-crawl-a-quarter-billion-webpages-in-40-hours/) where the author explains how they crawled a quarter billion webpages in just 40 hours. One of the key techniques they used was a Bloom filter to efficiently track which webpages had already been crawled.
 
 In this post author used Bloom Filter to capture if the web page is already crawled.

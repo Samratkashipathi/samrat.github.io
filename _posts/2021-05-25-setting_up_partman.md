@@ -5,8 +5,6 @@ date: 2021-05-25
 tags: [postgres, database]
 ---
 
-# Setting up Partman - Postgres
-
 ## What is partitioning?
 
 Splitting up the large table into a logical group of subtables

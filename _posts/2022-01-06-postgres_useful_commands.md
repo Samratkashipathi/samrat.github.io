@@ -5,8 +5,6 @@ date: 2022-01-06
 tags: [postgres, database]
 ---
 
-# Postgres Useful Commands
-
 ## Dump the query results to .csv
 
 [How do you print the result of a PostgreSQL query in CSV or TSV format from the command line?](https://stackoverflow.com/questions/6521531/how-do-you-print-the-result-of-a-postgresql-query-in-csv-or-tsv-format-from-the)

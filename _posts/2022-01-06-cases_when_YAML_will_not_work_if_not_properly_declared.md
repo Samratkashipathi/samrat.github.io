@@ -5,8 +5,6 @@ date: 2022-01-06
 tags: [yaml]
 ---
 
-# Cases when YAML will not work if not properly declared
-
 ## Wrong Interpretation
 
 - There are some cases where yaml will not work and can be hard to debug the error

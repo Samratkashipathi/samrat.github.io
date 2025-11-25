@@ -5,8 +5,6 @@ date: 2022-01-06
 tags: [blockchain, distributed-systems]
 ---
 
-# Byzantine Generals Problem
-
 ## What is Byzantine generals problem
 
 ![Byzantine generals problem](/assets/images/blockchain/byzantine_generals_problem.png)
