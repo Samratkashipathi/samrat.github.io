@@ -1,9 +1,8 @@
 title: Samrat K S
 description: General | Golang | Database
-url: "https://samratkashipathi.github.io" # Your actual URL
-baseurl: "/samrat.github.io" # Keep this if your repo is named 'samrat.github.io' inside your user account, otherwise leave empty ""
+url: "https://samratkashipathi.github.io"
+baseurl: ""
 
-# This pulls the design automatically without cluttering your repo
 remote_theme: riggraz/no-style-please
 
 # Visual Settings

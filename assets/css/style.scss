@@ -2,42 +2,13 @@
 
 body {
     font-family: "Times New Roman", Times, serif;
-    /* The academic serif look */
-    background-color: #ffffff;
-    color: #000000;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-header {
-    border-bottom: none;
-    /* Removes the default line */
-    margin-bottom: 40px;
+    /* Matches Physical Intelligence */
 }
 
 h1,
 h2,
-h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* Contrast headers */
-    font-weight: bold;
-    color: #000;
-    letter-spacing: -0.5px;
-}
-
-a {
-    color: #000;
-    text-decoration: underline;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+h3,
+h4 {
+    font-family: Helvetica, Arial, sans-serif;
+    /* Keep headers clean */
 }
