@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Cases when YAML will not work if not properly declared"
+date: 2022-01-06
+tags: [yaml]
+---
+
 # Cases when YAML will not work if not properly declared
 
 ## Wrong Interpretation
@@ -49,9 +56,8 @@ Actual result:
 ```
 
 > NO is converted to False which was supposed to be short for Norway
-
-Null is converted to None which was supposed to be second name
 >
+> Null is converted to None which was supposed to be second name
 
 ## Data Type Mismatch
 
@@ -92,10 +98,7 @@ Since 9.3 is a floating value is is converted as floating value. We need to be e
 
 ## Learning
 
-<aside>
-💡 While declaring yaml if we know that value is string, encapsulate in double quotes
-
-</aside>
+> 💡 While declaring yaml if we know that value is string, encapsulate in double quotes
 
 ## Code snippet
 

@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Understanding Bloom Filter"
+date: 2024-06-20
+tags: [algorithms, data-structures]
+---
+
 # Understanding Bloom Filter
 
 I recently came across an fascinating blog [post](https://michaelnielsen.org/ddi/how-to-crawl-a-quarter-billion-webpages-in-40-hours/) where the author explains how they crawled a quarter billion webpages in just 40 hours. One of the key techniques they used was a Bloom filter to efficiently track which webpages had already been crawled.
@@ -10,17 +17,15 @@ What is a bloom filter?
 - In this particular use case where the author wanted to store all the web pages already crawled, he is using bloom filter to figure it check if crawler already visited the site.
 - Advantage: You don't need a lot of space to store data, you can have an in-memory datastore. The size of the datastore is known prior in the case of bloom filter
 
-## How does bloom filter works
+## How does bloom filter work
 
-<br>
-
-![Working](../bloom_filter/Working.png)
+![Working](/assets/images/bloom_filter/Working.png)
 
 When inserting an element (e.g., a word or URL) into a Bloom filter:
 
-The element is passed through multiple hash functions.
-Each hash function outputs a position in the filter's bit array.
-The bits at these positions are set to 1.
+- The element is passed through multiple hash functions.
+- Each hash function outputs a position in the filter's bit array.
+- The bits at these positions are set to 1.
 
 Example:
 
@@ -32,15 +37,13 @@ We would set the 2nd, 4th, and 7th bits in the Bloom filter to 1.
 
 ## Querying
 
-<br>
-
-![Working1](../bloom_filter/Working1.png)
+![Working1](/assets/images/bloom_filter/Working1.png)
 
 To check if an element exists in the set:
 
-Pass the element through the same hash functions.
-Check if all the corresponding bits in the filter are set to 1.
-If all bits are 1, the element may exist in the set. If any bit is 0, the element definitely does not exist.
+- Pass the element through the same hash functions.
+- Check if all the corresponding bits in the filter are set to 1.
+- If all bits are 1, the element may exist in the set. If any bit is 0, the element definitely does not exist.
 
 ## Limitations
 

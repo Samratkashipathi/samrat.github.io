@@ -1,7 +1,26 @@
-theme: jekyll-theme-minimal
+title: Samrat K S
+description: General | Golang | Database
+url: "https://samratkashipathi.github.io" # Your actual URL
+baseurl: "/samrat.github.io" # Keep this if your repo is named 'samrat.github.io' inside your user account, otherwise leave empty ""
+
+# This pulls the design automatically without cluttering your repo
+remote_theme: riggraz/no-style-please
+
+# Visual Settings
+google_analytics: # Add ID here if you have one
+
+# Plugins required for GitHub Pages
 plugins:
-  - jekyll-feed
-title: "Samrat"
-description: ""
-author: Samrat K S
-google_analytics: G-VSN48CTT0C
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+# Author Details (Appears in SEO tags)
+author:
+  name: Samrat K S
+
+# Exclude standard junk files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

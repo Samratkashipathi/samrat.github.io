@@ -1,4 +1,13 @@
-## **Dump the query results to .csv**
+---
+layout: post
+title: "Postgres Useful Commands"
+date: 2022-01-06
+tags: [postgres, database]
+---
+
+# Postgres Useful Commands
+
+## Dump the query results to .csv
 
 [How do you print the result of a PostgreSQL query in CSV or TSV format from the command line?](https://stackoverflow.com/questions/6521531/how-do-you-print-the-result-of-a-postgresql-query-in-csv-or-tsv-format-from-the)
 
@@ -10,7 +19,7 @@ psql -d <database_name> -c "<command>" -A -F , -X -o <file_name.csv>
 Copy (select * from users) To '/tmp/sample_data.csv' With CSV DELIMITER ',' HEADER;
 ```
 
-## **Terminate active connections to the database**
+## Terminate active connections to the database
 
 [PostgreSQL DROP DATABASE](https://www.postgresqltutorial.com/postgresql-drop-database/)
 
@@ -20,7 +29,7 @@ FROM pg_stat_activity
 WHERE pg_stat_activity.datname = 'process_designer';
 ```
 
-## **Generate a SQL with specified columns not present**
+## Generate a SQL with specified columns not present
 
 ```sql
 SELECT 'SELECT ' || string_agg('o' || '.' || c.column_name, ', ') || ' FROM ' || table_name || ' o' As sqlstmt

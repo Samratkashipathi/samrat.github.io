@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Setting up Partman - Postgres"
+date: 2021-05-25
+tags: [postgres, database]
+---
+
 # Setting up Partman - Postgres
 
 ## What is partitioning?
@@ -33,7 +40,7 @@ Use case is we have to partition table such that we need to store tickets day wi
 create table ticket (id serial, status text, created_at date) partition by range (created_at);
 ```
 
-Partion by range will create a partition table
+Partition by range will create a partition table
 
 ![https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F205cdbf3-1b26-4c71-802e-5fdf3f5b5923_1554x248.png](https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F205cdbf3-1b26-4c71-802e-5fdf3f5b5923_1554x248.png)
 
@@ -67,11 +74,11 @@ Now lets query child tables
 
 ![https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2f17aa7d-a5ba-4fbd-b080-45444ecba93c_644x282.png](https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2f17aa7d-a5ba-4fbd-b080-45444ecba93c_644x282.png)
 
-Since partition was created per dat basis, we can see record which was created_at 17th is in ticket_2021_05_17 table and 16th is in ticket_2021_05_16 th table.
+Since partition was created per date basis, we can see record which was created_at 17th is in ticket_2021_05_17 table and 16th is in ticket_2021_05_16 table.
 
 # Partman
 
-Cosider a use case where we need to keep only last 2 days record and delete old records regularly and created new tables for next day
+Consider a use case where we need to keep only last 2 days record and delete old records regularly and create new tables for next day
 
 Lets create more partitions for this use case
 
@@ -93,9 +100,9 @@ INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-06-15');
 
 To support our use case where we need to delete old partition tables and create new tables for upcoming days
 
-We can do that using multiple way
+We can do that using multiple ways
 
-- We can write a corn that supports this use case
+- We can write a cron that supports this use case
 - Use scheduler pg_agent where you will execute a procedure every day at say
 
 And many other ways which are either difficult to setup or maintain
@@ -134,16 +141,16 @@ This is where we can use partman to setup. Advantages are as below
 
     Parameters:
 
-  - Parent table name
-  - Partition key
-  - Type of partman
-  - Parition interval
+    - Parent table name
+    - Partition key
+    - Type of partman
+    - Partition interval
 
     We should be seeing following tables now:
 
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled.png](../setting_up_partman/Untitled.png)
+    ![Partman Tables](/assets/images/setting_up_partman/Untitled.png)
 
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%201.png](../setting_up_partman/Untitled%201.png)
+    ![Partman Config](/assets/images/setting_up_partman/Untitled%201.png)
 
     We can also see partman config
 
@@ -151,11 +158,9 @@ This is where we can use partman to setup. Advantages are as below
     select * from partman.part_config;
     ```
 
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%202.png](../setting_up_partman/Untitled%202.png)
+    ![Part Config Table](/assets/images/setting_up_partman/Untitled%202.png)
 
-    Most of the values are default values. Few of the fields which might be handy are
-
-    [Partman configs](https://www.notion.so/4eff86b4a60a41de902dc2eff6204762)
+    Most of the values are default values. Few of the fields which might be handy are documented in the Partman configuration.
 
 
 - Setting up retention
@@ -191,16 +196,16 @@ update partman.part_config set retention = '1 days' and retention_keep_table= fa
     INSERT INTO public.ticket (status, created_at) VALUES('PASS', '2021-05-26');
     ```
 
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%203.png](../setting_up_partman/Untitled%203.png)
+    ![Sample Data](/assets/images/setting_up_partman/Untitled%203.png)
 
 - Once background worker runs we should be able see `ticket_p2021_05_22` till `ticket_p2021_05_25` to be deleted as we have configured retention to be 1 day
 
 
-    ![%5B26-05-2021%5D%20Setting%20up%20Partman%20-%20Postgres%2091995151e6ed497daf3248444ede2678/Untitled%204.png](../setting_up_partman/Untitled%204.png)
+    ![Partitions After Cleanup](/assets/images/setting_up_partman/Untitled%204.png)
 
 
 ## Closing Notes
 
-- Partam is easy to configure and maintain
+- Partman is easy to configure and maintain
 - It can be used to extend other functionality like archiving old data in backup database
 - With newer version of postgres (PG 13+) we can setup streaming replication + partman
