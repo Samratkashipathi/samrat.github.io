@@ -3,30 +3,47 @@ description: ""
 url: "https://samratkashipathi.github.io"
 baseurl: "/samrat.github.io"
 
-remote_theme: riggraz/no-style-please
+remote_theme: mmistakes/minimal-mistakes
 
-# Theme Configuration
-theme_config:
-  appearance: "auto" # can be "light", "dark" or "auto"
-  back_home_text: "home" # customize text for homepage link in post layout
-  date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: true # show blog description in home page
+# Minimal Mistakes Configuration
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# Visual Settings
-google_analytics: G-9MC70VVQZ4
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-9MC70VVQZ4"
+    anonymize_ip: false
 
-# Plugins required for GitHub Pages
+# Author Details
+author:
+  name: Samrat K S
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Samratkashipathi"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/samratkashipathi/"
+
+# Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
 
-# Author Details (Appears in SEO tags)
-author:
-  name: Samrat K S
-
-# Exclude standard junk files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
