@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Postgres Useful Commands"
 date: 2022-01-06
 tags: [postgres, database]

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Setting up Partman - Postgres"
 date: 2021-05-25
 tags: [postgres, database]

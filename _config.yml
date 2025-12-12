@@ -1,5 +1,5 @@
 title: Samrat K S
-description: ""
+description: "Learnings"
 url: "https://samratkashipathi.github.io"
 baseurl: "/samrat.github.io"
 
@@ -37,6 +37,7 @@ plugins:
 
 # Defaults
 defaults:
+  # Posts
   - scope:
       path: ""
       type: posts
@@ -47,3 +48,10 @@ defaults:
       comments: false
       share: true
       related: true
+  # Pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

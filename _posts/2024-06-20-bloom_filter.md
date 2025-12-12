@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Understanding Bloom Filter"
 date: 2024-06-20
 tags: [algorithms, data-structures]

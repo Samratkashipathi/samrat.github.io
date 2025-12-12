@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Cases when YAML will not work if not properly declared"
 date: 2022-01-06
 tags: [yaml]

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Ethereum for Dummies - Dr. Gavin Wood"
 date: 2022-01-07
 tags: [ethereum, blockchain]

@@ -1,0 +1,9 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Archive"
+    url: /archive/
+  - title: "GitHub"
+    url: https://github.com/Samratkashipathi
+  - title: "LinkedIn"
+    url: https://www.linkedin.com/in/samratkashipathi/

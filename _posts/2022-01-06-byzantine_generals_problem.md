@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Byzantine Generals Problem"
 date: 2022-01-06
 tags: [blockchain, distributed-systems]
